@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.0] - 2025-09-28
+
+### Changed
+
+-   Drop support for codemonster-ru/view 1.x; require ^2.0.
+
 ## [1.0.0] - 2025-09-27
 
 ### Added
