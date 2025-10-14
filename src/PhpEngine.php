@@ -1,19 +1,17 @@
 <?php
 
-declare(strict_types=1);
-
 namespace Codemonster\View\Engines;
 
 use Codemonster\View\EngineInterface;
 use Codemonster\View\Locator\LocatorInterface;
+use Codemonster\View\Contracts\SupportsInspectionInterface;
 
-final class PhpEngine implements EngineInterface
+final class PhpEngine implements EngineInterface, SupportsInspectionInterface
 {
     public function __construct(
         private readonly LocatorInterface $locator,
         private readonly string|array $extensions = 'php'
-    ) {
-    }
+    ) {}
 
     public function render(string $name, array $data = []): string
     {
@@ -33,5 +31,15 @@ final class PhpEngine implements EngineInterface
         };
 
         return $render($file, $data);
+    }
+
+    public function getLocator(): LocatorInterface
+    {
+        return $this->locator;
+    }
+
+    public function getExtensions(): array
+    {
+        return (array) $this->extensions;
     }
 }

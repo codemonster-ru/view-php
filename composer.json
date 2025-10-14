@@ -52,5 +52,10 @@
             "/.phpunit.cache",
             "/phpunit.xml*"
         ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "999.x-dev"
+        }
     }
 }
